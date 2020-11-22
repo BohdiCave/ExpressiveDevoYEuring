@@ -1,0 +1,24 @@
+{
+  "name": "expressivedevoyeuring",
+  "version": "1.0.0",
+  "description": "MVC app for gourmands",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BohdiCave/ExpressiveDe-voyuer-ing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BohdiCave/ExpressiveDe-voyuer-ing/issues"
+  },
+  "homepage": "https://github.com/BohdiCave/ExpressiveDe-voyuer-ing#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
+}
