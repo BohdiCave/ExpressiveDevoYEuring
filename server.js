@@ -9,12 +9,15 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-require("./routes/api-routes.js")(app);
+const exphbs = require("express-handlebars");
 
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+const routes = require("./controllers/foods_controller.js");
+
+app.use(routes);
+
 app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log("Server listening on http://localhost: " + PORT);
 });
