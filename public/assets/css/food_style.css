@@ -1,0 +1,39 @@
+body {
+    background-color: lightgreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+}
+
+main .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.column {
+    flex: 1 0 auto;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li .list-item {
+    flex: 1 0 auto;
+    display: inline;
+}

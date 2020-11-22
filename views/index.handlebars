@@ -1,0 +1,28 @@
+<header>
+    <h1>Expressive DevoYEuring</h1>
+    <h2>Gourmet foods for gourmands</h2>
+</header>
+
+<main class="container row">
+    <div class="column">
+        {{#each foodList}}
+        <div class="row">
+            <h2>{{food_name}}</h2>
+            <h3>{{ingredients}}</h3>
+            <img src="{{pic_url}}" alt="Photo of {{food_name}}" />
+        </div>
+        <div class="row">
+            <button type="submit">DevoYEur?</button>
+        </div>
+        {{/each}}
+    </div>
+</main>
+
+<footer>
+    <ul> 
+        <li class="list-header"> <h2> Devoured: </h2> </li>
+        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
+        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
+        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
+    </ul>
+</footer>
