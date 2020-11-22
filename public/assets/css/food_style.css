@@ -1,39 +1,79 @@
 body {
     background-color: lightgreen;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkgreen
 }
 
 header, footer {
     text-align: center;
 }
 
-main .container {
+.container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: space-evenly;
+    margin: 30px;
 }
 
-.column {
+.row {
     flex: 1 0 auto;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.col1 {
+    flex: 1 0 30%;  
+    padding-left: 10px;
+}
+
+.col2 {
+    flex: 1 0 30%;
+    padding: 0px 20px;
+}
+
+.col3 {
+    flex: 1 0 30%;
+}
+
+h1, h2 {
+    text-shadow: 1px 1px 10px darkgray;
+}
+
+p {
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 img {
     border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 button {
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: crimson;
+    color: whitesmoke;
+    margin-top: 15px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 }
 
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-li .list-item {
+.list-header {
+    list-style: none;
+}
+
+li {
     flex: 1 0 auto;
     display: inline;
 }
