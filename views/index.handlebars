@@ -1,28 +1,43 @@
 <header>
-    <h1>Expressive DevoYEuring</h1>
-    <h2>Gourmet foods for gourmands</h2>
+    <div class="title">
+        <h1>Expressive <span style="color:crimson"> Devo</span>YE<span style="color: crimson">uring</span></h1>
+        <h2>Gourmet foods for gourmands</h2>
+    </div>
 </header>
 
-<main class="container row">
-    <div class="column">
-        {{#each foodList}}
+<main class="container">
+
+    {{#each foodList}}
         <div class="row">
-            <h2>{{food_name}}</h2>
-            <h3>{{ingredients}}</h3>
-            <img src="{{pic_url}}" alt="Photo of {{food_name}}" />
+            <div class="col1">
+                <h2>{{food_name}}</h2>
+                <img src="{{pic_url}}" alt="Photo of {{food_name}}" />  
+            </div>
+            <div class="col2">
+                <h2>Ingredients: </h2>
+                <p>{{ingredients}}</p>
+                <div class="row devoyeuredBtn">
+                    <form class="column">
+                        <button type="submit">DevouYEur?</button>
+                    </form>
+                    <form class="column hide">
+                        <button class="devoured">DevoYEured!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col3">&nbsp;</div>
         </div>
-        <div class="row">
-            <button type="submit">DevoYEur?</button>
-        </div>
-        {{/each}}
-    </div>
+    {{/each}}
+
 </main>
 
 <footer>
+    <div class="devoyeured">
     <ul> 
-        <li class="list-header"> <h2> Devoured: </h2> </li>
-        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
-        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
-        <li class="list-item">  {{#if devo_ye-ured}} <h3>{{food_name}}</h3> {{/if}}</li>
+        <li class="list-header"> <h3> DevouYEred: </h3> </li>
+        <li class="list-item">  {{#if devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
+        <li class="list-item">  {{#if devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
+        <li class="list-item">  {{#if devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
     </ul>
+    </div>
 </footer>
