@@ -8,8 +8,10 @@
 </head>
 <body>
     <header>
-        <h1>Expressive <span style="color:crimson"> Devo</span>YE<span style="color: crimson">uring</span></h1>
-        <h2>Gourmet foods for gourmands</h2>
+        <div class="title">
+            <h1>Expressive <span style="color:crimson"> Devo</span>YE<span style="color: crimson">uring</span></h1>
+            <h2>Gourmet foods for gourmands</h2>
+        </div>
     </header>
     
     <main class="container">
@@ -22,7 +24,14 @@
             <div class="col2">
                 <h2>Ingredients: </h2>
                 <p>Saffron, paprika, onions, garlic, extra virgin olive oil, Spanish sea salt & pepper, Bomba; lemon wedges, bell & puquillo peppers, tomatoes; chicken thighs and broth, mussels, Spanish cooking sausage</p>
-                <form><button type="submit">DevoYEur?</button></form>
+                <div class="row devoyeuredBtn">
+                    <form class="column">
+                        <button type="submit">DevoYEur?</button>
+                    </form>
+                    <form class="column hide">
+                        <button type="submit" class="devoured">DevoYEured!</button>
+                    </form>    
+                </div>
             </div>
             <div class="col3">&nbsp;</div>
         </div>
@@ -35,7 +44,14 @@
             <div class="col2">
                 <h2>Ingredients: </h2>
                 <p>Beets, cabbage, carrots, parsley, potatoes, meat</p>
-                <form><button type="submit">DevoYEur?</button></form>
+                <div class="row devoyeuredBtn">
+                    <form class="column">
+                        <button type="submit">DevoYEur?</button>
+                    </form>
+                    <form class="column hide">
+                        <button type="submit" class="devoured">DevoYEured!</button>
+                    </form>    
+                </div>
             </div> 
             <div class="col3">&nbsp;</div>   
         </div>  
@@ -48,18 +64,28 @@
             <div class="col2">
                 <h2>Ingredients:</h2>
                 <p>Eel, avocado & cucumber roll, topped with mango</p>
-                <form><button type="submit">DevoYEur?</button></form>
+                <div class="row devoyeuredBtn">
+                    <form class="column">
+                        <button type="submit">DevoYEur?</button>
+                    </form>
+                    <form class="column hide">
+                        <button type="submit" class="devoured">DevoYEured!</button>
+                    </form>    
+                </div>
             </div>
             <div class="col3">&nbsp;</div>
         </div>
     </main>
     
     <footer>
+        <div class="devoyeured">
         <ul> 
             <li class="list-header"> <h3> Devoured: </h3> </li>
             <li class="list-item">  {{#if devo_ye-ured}} <h4>{{food_name}}</h4> {{/if}}</li>
             <li class="list-item">  {{#if devo_ye-ured}} <h4>{{food_name}}</h4> {{/if}}</li>
             <li class="list-item">  {{#if devo_ye-ured}} <h4>{{food_name}}</h4> {{/if}}</li>
         </ul>
-    </footer></body>
+        </div>
+    </footer>
+</body>
 </html>
