@@ -1,30 +1,33 @@
+// Importing database connection
 const connection = require("./connection.js");
 
+// Setting up database ORM functions
 const orm = {
-  selectAll: function() {
+  selectAll: function(cb) {
     const queryString = "SELECT * FROM foods;";
     connection.query(queryString, function(err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
-  insertOne: function(name, ingredients, pic, status) {
-    const queryString = "INSERT INTO foods (food_name, ingredients, pic_url, devo_ye_ured) VALUES (?,?,?,?);";
+  insertOne: function(cols, vals, cb) {
+    const queryString = "INSERT INTO foods (" + cols.toString() + ") VALUES (?,?,?,?)";
     console.log(queryString);
-    connection.query(queryString, [name, ingredients, pic, status], function(err, result) {
+    connection.query(queryString, vals, function(err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
-  updateOne: function(status, id) {
+  updateOne: function(status, id, cb) {
     var queryString =
       "UPDATE foods SET ? WHERE ?;";
     connection.query(queryString, [status, id], function(err, result) {
         if (err) throw err;
-        console.log(result);
+        cb(result);
       }
     );
   }
 };
 
+// Exporting DB ORM fx to the model
 module.exports = orm;

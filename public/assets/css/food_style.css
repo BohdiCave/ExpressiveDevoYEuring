@@ -1,7 +1,7 @@
 body {
-    background-color: lightgreen;
+    background-color: rgba(144, 238, 144, 0.7);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: darkgreen;
+    color: darkolivegreen;
     margin: 0;
     border: 0;
 }
@@ -13,6 +13,7 @@ header {
     text-align: center;
     background-image: url("https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/term_desktop/public/2019-07/Gourmet-food-%E2%94%AC%C2%AEGetty-Images.jpg?h=5b657edc&itok=RRzKIajc");
     background-position: center;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -50,13 +51,14 @@ header {
 }
 
 h1, h2 {
-    text-shadow: 1px 1px 10px darkgray;
+    text-shadow: 1px 1px 8px darkgray;
 }
 
 p {
     overflow-wrap: break-word;
     hyphens: auto;
     font-size: 18px;
+    line-height: 1.5em;
 }
 
 img {
@@ -93,6 +95,44 @@ button {
     display: none;
 }
 
+.insertOne {
+    height: 100px;
+    padding: 20px 30px 30px;
+    border: 1px solid darkolivegreen;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+.insertOne .col2 {
+    flex: 0 1 25%;
+    margin: 0 30px;
+    line-height: 2em;
+}
+
+.insertOne input[type=text] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid darkolivegreen;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    background-image: url("https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/term_desktop/public/2019-07/Gourmet-food-%E2%94%AC%C2%AEGetty-Images.jpg?h=5b657edc&itok=RRzKIajc");
+    background-position: center;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.devoyeured {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 ul {
     display: flex;
     flex-direction: row;
@@ -107,18 +147,3 @@ li {
     flex: 1 0 auto;
     display: inline;
 }
-
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
-    background-image: url("https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/term_desktop/public/2019-07/Gourmet-food-%E2%94%AC%C2%AEGetty-Images.jpg?h=5b657edc&itok=RRzKIajc");
-    background-position: center;
-}
-
-.devoyeured {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-

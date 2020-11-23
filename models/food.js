@@ -1,22 +1,23 @@
+// Importing database ORM functions
 const orm = require("../config/orm.js");
 
 const food = {
     selectAll: function(cb) {
-      orm.selectAll("foods", function(res) {
+      orm.selectAll(function(res) {
         cb(res);
       });
     },
     insertOne: function(cols, vals, cb) {
-      orm.insertOne("foods", cols, vals, function(res) {
+      orm.insertOne(cols, vals, function(res) {
         cb(res);
       });
     },
-    updateOne: function(colVal, condition, cb) {
-      orm.update("foods", colVal, condition, function(res) {
+    updateOne: function(status, id, cb) {
+      orm.updateOne(status, id, function(res) {
         cb(res);
       });
     }
   };
   
-  // Export the database functions for the controller
+  // Export the DB fx for the controller
   module.exports = food;

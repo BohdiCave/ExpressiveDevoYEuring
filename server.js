@@ -1,6 +1,6 @@
-// Imports
+// Imports - express.js, handlebars.js, API routes from the controller
 const express = require("express");
-const exphbs = require("express-handlebars");
+const hbs = require("express-handlebars");
 const routes = require("./controllers/foods_controller.js");
 
 // An instance of express
@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Handlebars templates
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // JSON parsing
