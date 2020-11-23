@@ -7,7 +7,7 @@
 
 <main class="container">
 
-    {{#each foodList}}
+    {{#each foods}}
         <div class="row">
             <div class="col1">
                 <h2>{{food_name}}</h2>
@@ -17,8 +17,8 @@
                 <h2>Ingredients: </h2>
                 <p>{{ingredients}}</p>
                 <div class="row devoyeuredBtn">
-                    <form class="column">
-                        <button type="submit">DevouYEur?</button>
+                    <form method="POST" action="/" class="column">
+                        <button type="submit" class="devoyeur" id="#{{id}}">DevouYEur?</button>
                     </form>
                     <form class="column hide">
                         <button class="devoured">DevoYEured!</button>
@@ -28,6 +28,34 @@
             <div class="col3">&nbsp;</div>
         </div>
     {{/each}}
+
+    <div class="row">
+        <form class="column insertOne">
+            <div class="form-group">
+                <label for="fo">Name of gourmet dish:</label>
+                <input type="text" id="fo" name="food_name">
+            </div>
+
+            <div class="form-group">
+                <label for="ingred">Ingredients:</label>
+                <input type="text" id="ingred" name="ingredients">
+            </div>
+
+            <div class="form-group">
+                <label for="pic">Link to a photograph (if available):</label>
+                <input type="text" id="pic" name="pic_url">
+            </div>
+
+
+            <div class="form-group">
+                <label for="devo">DevoYEured?</label><br>
+                <input type="radio" name="devo_ye_ured" value="1" checked> DevoYEured!<br>
+                <input type="radio" name="devo_ye_ured" value="0"> Non, mon cher ami! 
+            </div>
+
+            <button type="submit" class="toBeDevoured">Add a gourmet dish of your own</button>
+        </form>
+    </div>
 
 </main>
 

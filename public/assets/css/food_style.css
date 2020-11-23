@@ -85,6 +85,10 @@ button {
     background: black;
 }
 
+.toBeDevoured {
+    background: darkolivegreen;
+}
+
 .hide {
     display: none;
 }
