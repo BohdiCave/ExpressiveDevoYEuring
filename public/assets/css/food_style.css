@@ -159,3 +159,8 @@ ul {
 li h2 {
     margin-top: 0;
 }
+
+.signature {
+    margin: 10px;
+    line-height: 1.5em;
+}
