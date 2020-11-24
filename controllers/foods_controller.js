@@ -34,7 +34,6 @@ router.post("/api/foods", (req, res) => {
   
 router.put("/api/foods/:id", (req, res) => {
   const id = req.params.id;
-  console.log(req.body);
   food.updateOne(req.body.devo_ye_ured, id, result => {
     if (result.changedRows == 0) {
       return res.status(404).end();

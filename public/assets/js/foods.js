@@ -15,21 +15,23 @@ $(function() {
       }).then(
         function() {
           console.log("Changed state to", newState);
-          location.reload(true);
+          location.href = "/";
         }
       );
     });
   
     $(".toBeDevoured").on("submit", function(event) {
       event.preventDefault();
-  
+
       const newFood = {
         food_name: $("#fo").val().trim(),
         ingredients: $("#ingred").val().trim(),  
         pic_url: $("#pic").val().trim(), 
         devo_ye_ured: $("[name=devo_ye_ured]:checked").val().trim()
       };
-  
+
+      $("#insertOne").reset();
+
       // Send the POST request.
       $.ajax("/api/foods", {
         type: "POST",
@@ -39,6 +41,7 @@ $(function() {
           console.log("Added new gourmet dish!");
         }
       );
+
     });
 });
   

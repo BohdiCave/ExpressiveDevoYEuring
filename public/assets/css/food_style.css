@@ -68,6 +68,10 @@ img {
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.display img {
+    align-self: center;
+}
+
 button {
     padding: 5px 10px;
     font-size: 20px;
@@ -97,7 +101,7 @@ button {
     display: none;
 }
 
-.insertOne {
+#insertOne {
     height: 100px;
     padding: 20px 30px 30px;
     border: 1px solid darkolivegreen;
@@ -107,18 +111,20 @@ button {
     line-height: 1.5em;
 }
 
-.insertOne .col2 {
+#insertOne .col2 {
     flex: 1 0 25%;
     margin: 0 30px;
     line-height: 2em;
 }
 
-.insertOne input[type=text] {
+#insertOne input[type=text] {
     background: none;
     border: none;
     border-bottom: 1px solid darkolivegreen;
     width: 100%;
     word-wrap: break-word;
+    color: inherit;
+    font-size: 16px;
 }
 
 #req {

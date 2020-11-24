@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col1">
+        <div class="display {{#if devo_ye_ured}} hide {{/if}}">
+            <h2>{{food_name}}</h2>
+            <img src="{{pic_url}}" alt="Photo of {{food_name}}" />
+        </div>
+    </div>
+    <div class="col2">
+        <h2>Ingredients: </h2>
+        <p>{{ingredients}}</p>
+        <div class="row devouredBtns">
+            <button type="submit" class="devour {{#if devo_ye_ured}} hide {{/if}}" data-id="{{id}}">DevoYEur?</button>
+            <button class="devoured {{#unless devo_ye_ured}} hide {{/unless}}">DevoYEured!</button>
+        </div>
+    </div>
+    <div class="col3">
+        <div class="display {{#unless devo_ye_ured }} hide {{/unless}}">
+            <h2>{{food_name}}</h2>
+            <img src="{{pic_url}}" alt="Photo of {{food_name}}" />  
+        </div>
+    </div>
+</div>
