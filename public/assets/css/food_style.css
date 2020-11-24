@@ -165,6 +165,7 @@ li h2 {
     background-color: rgba(255, 255, 255, 0.7);
     margin: 20px;
     line-height: 1.5em;
+    justify-self: center;
 }
 
 #care {
