@@ -1,13 +1,14 @@
 // Importing express.js and the model
 const express = require("express");
 const food = require("../models/food.js");
+let hbsObject = {};
 
 // Setting up API routes
 const router = express.Router();
 
 router.get("/", (req, res) => {
   food.selectAll(data => {
-    const hbsObject = {
+    hbsObject = {
       foods: data
     };
     res.render("index", hbsObject);
@@ -16,18 +17,25 @@ router.get("/", (req, res) => {
   
 router.post("/api/foods", (req, res) => {
   food.insertOne(["food_name", "ingredients", "pic_url", "devo_ye_ured"], 
-  [req.body.name, req.body.ingredients, req.body.pic, req.body.status], 
+  [req.body.food_name, req.body.ingredients, req.body.pic_url, req.body.devo_ye_ured], 
   result => {
-    res.json({ id: result.insertId });
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      food.selectAll(data => {
+        hbsObject = {
+          foods: data
+        };
+        res.render("index", hbsObject);     
+      });
+    }
   });
 });
   
 router.put("/api/foods/:id", (req, res) => {
-  const condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  food.updateOne(req.body.devo_ye_ured, condition, result => {
+  const id = req.params.id;
+  console.log(req.body);
+  food.updateOne(req.body.devo_ye_ured, id, result => {
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {

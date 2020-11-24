@@ -1,28 +1,26 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".devoyeur").on("click", function(event) {
+    $(".devour").on("click", function(event) {
       const id = $(this).data("id");
-      const devour = $(this).data("devoyeured");
-  
+      
+      // Updating the boolean state parameter
       const newState = {
-        devo_ye_ured: devoyeured
+        devo_ye_ured: 1
       };
-  
+      
       // Send the PUT request.
-      $.ajax("/api/foods/" + id, {
+      $.ajax(`/api/foods/${id}`, {
         type: "PUT",
         data: newState
       }).then(
         function() {
           console.log("Changed state to", newState);
-          // Reload the page to get the updated list
-          location.reload();
+          location.reload(true);
         }
       );
     });
   
     $(".toBeDevoured").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       const newFood = {
@@ -39,8 +37,6 @@ $(function() {
       }).then(
         function() {
           console.log("Added new gourmet dish!");
-          // Reload the page to get the updated list
-          location.reload();
         }
       );
     });

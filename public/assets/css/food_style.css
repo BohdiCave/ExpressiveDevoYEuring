@@ -25,7 +25,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: space-evenly;
-    margin: 30px;
+    margin: 0px 30px 60px 30px;
 }
 
 .row {
@@ -38,7 +38,7 @@ header {
 .col1 {
     flex: 1 0 30%;  
     padding-left: 10px;
-    height: 300px;
+    min-height: 300px;
 }
 
 .col2 {
@@ -59,6 +59,7 @@ p {
     hyphens: auto;
     font-size: 18px;
     line-height: 1.5em;
+    color: #444;
 }
 
 img {
@@ -79,7 +80,7 @@ button {
     cursor: pointer;
 }
 
-.devoyeuredBtn {
+.devouredBtns {
     margin-top: 20px;
 }
 
@@ -89,6 +90,7 @@ button {
 
 .toBeDevoured {
     background: darkolivegreen;
+    margin-top: 20px;
 }
 
 .hide {
@@ -101,11 +103,12 @@ button {
     border: 1px solid darkolivegreen;
     border-radius: 10px;
     font-size: 18px;
+    color: #444;
     line-height: 1.5em;
 }
 
 .insertOne .col2 {
-    flex: 0 1 25%;
+    flex: 1 0 25%;
     margin: 0 30px;
     line-height: 2em;
 }
@@ -116,6 +119,10 @@ button {
     border-bottom: 1px solid darkolivegreen;
     width: 100%;
     word-wrap: break-word;
+}
+
+#req {
+    margin-top: 30px;
 }
 
 footer {
@@ -129,21 +136,24 @@ footer {
 }
 
 .devoyeured {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
+    flex: 1 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    margin-top: 0;
+    padding: 0;
 }
 
-.list-header {
-    list-style: none;
-}
-
-li {
+.list-item {
     flex: 1 0 auto;
     display: inline;
+    margin-top: 0;
+}
+
+li h2 {
+    margin-top: 0;
 }

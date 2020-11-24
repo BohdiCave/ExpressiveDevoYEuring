@@ -10,38 +10,45 @@
     {{#each foods}}
         <div class="row">
             <div class="col1">
-                <h2>{{food_name}}</h2>
-                <img src="{{pic_url}}" alt="Photo of {{food_name}}" />  
+                <div class="display {{#if devo_ye_ured}} hide {{/if}}">
+                    <h2>{{food_name}}</h2>
+                    <img src="{{pic_url}}" alt="Photo of {{food_name}}" />
+                </div>
             </div>
             <div class="col2">
                 <h2>Ingredients: </h2>
                 <p>{{ingredients}}</p>
-                <div class="row devoyeuredBtn">
-                    <form method="POST" action="/" class="column">
-                        <button type="submit" class="devoyeur" id="#{{id}}">DevouYEur?</button>
-                    </form>
-                    <form class="column hide">
-                        <button class="devoured">DevoYEured!</button>
-                    </form>
+                <div class="row devouredBtns">
+                    <button type="submit" class="devour {{#if devo_ye_ured}} hide {{/if}}" data-id="{{id}}">DevoYEur?</button>
+                    <button class="devoured {{#unless devo_ye_ured}} hide {{/unless}}">DevoYEured!</button>
                 </div>
             </div>
-            <div class="col3">&nbsp;</div>
+            <div class="col3">
+                <div class="display {{#unless devo_ye_ured }} hide {{/unless}}">
+                    <h2>{{food_name}}</h2>
+                    <img src="{{pic_url}}" alt="Photo of {{food_name}}" />  
+                </div>
+            </div>
         </div>
     {{/each}}
-
-    <form class="row insertOne">
+    <div class="row">
+        <h1>Add a gourmet dish of your own:</h1>
+    </div>
+    <form class="row insertOne" method="POST" action="/api/foods">
+        
         <div class="col1">
             <div class="form-group">
-                <label for="fo">Name of gourmet dish:</label>
+                <label for="fo">Name of gourmet dish:*</label>
                 <input type="text" id="fo" name="food_name">
-            </div>      
-            <button type="submit" class="toBeDevoured">Add a gourmet dish of your own</button>
+            </div>
+            <button type="submit" class="toBeDevoured">Add it!</button>
+            <p id="req">* Required fields</p> 
         </div>
         <div class="col2">
             <div class="form-group">
-                <label for="devo">DevoYEured?</label><br>
-                <input type="radio" name="devo_ye_ured" value="1" checked> Oh, yes! Oui, madame ou monsieur!<br>
-                <input type="radio" name="devo_ye_ured" value="0"> Alas, not yet... Non, mon cher ami...
+                <label for="devo">DevoYEured?*</label><br>
+                <input type="radio" name="devo_ye_ured" value="1" checked> YE! Oui, madame ou monsieur!<br>
+                <input type="radio" name="devo_ye_ured" value="0"> NO YE... Non, mon cher ami...
             </div>
         </div>
         <div class="col3">            
@@ -60,11 +67,13 @@
 
 <footer>
     <div class="devoyeured">
-    <ul> 
-        <li class="list-header"> <h2> DevouYEred: </h2> </li>
-        <li class="list-item">  {{#if foods.devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
-        <li class="list-item">  {{#if foods.devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
-        <li class="list-item">  {{#if foods.devo_ye_ured}} <h4>{{food_name}}</h4> {{/if}}</li>
-    </ul>
+        <h2><span style="color:crimson">Devo</span>YE<span style="color:crimson">ured</span></h2>
+        <ul class=""> 
+            {{#each foods}} 
+                {{#if devo_ye_ured}} 
+                    <li class="list-item"><h2>{{food_name}}</h2></li>
+                {{/if}}
+            {{/each}}
+        </ul>
     </div>
 </footer>

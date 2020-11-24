@@ -12,15 +12,13 @@ const orm = {
   },
   insertOne: function(cols, vals, cb) {
     const queryString = "INSERT INTO foods (" + cols.toString() + ") VALUES (?,?,?,?)";
-    console.log(queryString);
     connection.query(queryString, vals, function(err, result) {
       if (err) throw err;
       cb(result);
     });
   },
   updateOne: function(status, id, cb) {
-    var queryString =
-      "UPDATE foods SET ? WHERE ?;";
+    var queryString = "UPDATE foods SET devo_ye_ured = ? WHERE id = ?;";
     connection.query(queryString, [status, id], function(err, result) {
         if (err) throw err;
         cb(result);
