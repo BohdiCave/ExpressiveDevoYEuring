@@ -75,7 +75,7 @@ _ _ ___________________P__________________________V_____________________S_______
 
 ## Links
 
-[Heroku-deployed app](https://https://serene-fortress-49055.herokuapp.com/)
+[Heroku-deployed app](https://serene-fortress-49055.herokuapp.com/)
 
 [GitHub repository](https://github.com/BohdiCave/ExpressiveDevoYEuring)
 
